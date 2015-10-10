@@ -31,7 +31,7 @@ $point_first = $points[1];
   <script>
     function initialize() {
       var map_center = new google.maps.LatLng(<?php echo $point_first[$point_pos_idx]; ?>);
-      var mapProp = { center:map_center, zoom:<?php echo $zoom_level_default ?>, mapTypeId:google.maps.MapTypeId.HYBRID };
+      var mapProp = { center:map_center, zoom:<?php echo $zoom_level_default ?>, mapTypeId:google.maps.MapTypeId.HYBRID, disableDefaultUI:true };
       var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
       map.addListener('click', function() {map.setZoom(<?php echo $zoom_level_default ?>);});
@@ -93,15 +93,15 @@ for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">날씨<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="http://swell.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:날씨</a></li>
+          <li><a href="http://www.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:날씨</a></li>
           <li><a href="http://swell.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:파도</a></li>
           <li><a href="http://wind.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:바람</a></li>
           <li><a href="http://tides.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:조수</a></li> 
-          <li><a href="http://swell.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:날씨</a></li>
+          <li><a href="http://www.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:날씨</a></li>
           <li><a href="http://swell.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:파도</a></li>
           <li><a href="http://wind.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:바람</a></li>
           <li><a href="http://tides.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:조수</a></li> 
-          <li><a href="http://swell.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:날씨</a></li>
+          <li><a href="http://www.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:날씨</a></li>
           <li><a href="http://swell.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:파도</a></li>
           <li><a href="http://wind.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:바람</a></li>
           <li><a href="http://tides.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:조수</a></li> 
