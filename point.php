@@ -66,7 +66,6 @@ $point_first = $points[1];
 				</h3>
     
     <ul class="nav nav-tabs">
-      <li class="active"><a href="<?php echo $this_file;?>">Home</a></li>
 <?php
 for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
 {
@@ -87,11 +86,27 @@ for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
             $points_attr = $points[$z];
         }
     }
-
     echo "  </ul>\n";
     echo "</li>\n";     
 }
 ?>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">날씨<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://swell.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:날씨</a></li>
+          <li><a href="http://swell.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:파도</a></li>
+          <li><a href="http://wind.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:바람</a></li>
+          <li><a href="http://tides.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:조수</a></li> 
+          <li><a href="http://swell.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:날씨</a></li>
+          <li><a href="http://swell.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:파도</a></li>
+          <li><a href="http://wind.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:바람</a></li>
+          <li><a href="http://tides.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:조수</a></li> 
+          <li><a href="http://swell.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:날씨</a></li>
+          <li><a href="http://swell.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:파도</a></li>
+          <li><a href="http://wind.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:바람</a></li>
+          <li><a href="http://tides.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:조수</a></li> 
+        </ul>
+      </li>
     </ul>
   </div>
   <div id="googleMap" style="position: absolute; width:100%; height:90%;"></div>

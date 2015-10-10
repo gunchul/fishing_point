@@ -69,7 +69,7 @@ $sydney_points = array
     ),
 
     array (
-        array("north", "North"),
+        array("north", "북쪽"),
         array(
              array("whale_beach", "Whale Beach", "no_detail"),
              array("1", "-33.607552, 151.335050"),
@@ -119,7 +119,7 @@ $sydney_points = array
     ),
 
     array(
-        array("south", "South"),
+        array("south", "남쪽"),
         array(
              array("bass_point", "Bass Point", "no_detail"),
              array("1", "-34.598338,150.901011"),
