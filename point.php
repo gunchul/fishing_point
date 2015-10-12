@@ -1,12 +1,15 @@
 <?php
 $this_file="point.php";
+$param_region=$_GET["region"];
 $param_fishing_point=$_GET["point"];
 if ( count($param_fishing_point) == 0 )
 {
+    $param_region="inner";
     $param_fishing_point="balgowla_height";
 }
 
 include 'point_data.php';
+include 'point_weather.php';
 
 // zoom level
 $zoom_level_default = 17;
@@ -71,8 +74,16 @@ for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
 {
     $regions = $sydney_points[$x];
     $regions_attr = $regions[0];
+
+				if ( $regions_attr[$regions_attr_id_idx] == $param_region )
+				{
+								echo "<li class='dropdown active'>";
+				}
+				else
+				{
+								echo "<li class='dropdown'>";
+				}
     
-    echo "<li class='dropdown'>";
     echo "  <a class='dropdown-toggle' data-toggle='dropdown' href='#'>".$regions_attr[$regions_attr_name_idx]."<span class='caret'></span></a>\n";
     echo "  <ul class='dropdown-menu'>\n";
     
@@ -80,7 +91,7 @@ for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
     {
         $points = $regions[$y];
         $points_attr = $points[0];
-        echo "<li><a href='".$this_file."?point=".$points_attr[$points_attr_id_idx]."'>".$points_attr[$points_attr_name_idx]."</a></li>\n";
+        echo "<li><a href='".$this_file."?point=".$points_attr[$points_attr_id_idx]."&region=".$regions_attr[$regions_attr_id_idx]."'>".$points_attr[$points_attr_name_idx]."</a></li>\n";
         for ( $z = 1; $z < count($points) ; $z++ )
         {
             $points_attr = $points[$z];
@@ -90,21 +101,17 @@ for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
     echo "</li>\n";     
 }
 ?>
-      <li class="dropdown">
+      <li class="dropdown nab-right">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">날씨<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="http://www.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:날씨</a></li>
-          <li><a href="http://swell.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:파도</a></li>
-          <li><a href="http://wind.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:바람</a></li>
-          <li><a href="http://tides.willyweather.com.au/nsw/sydney/south-head.html" target='_blank'>내만:조수</a></li> 
-          <li><a href="http://www.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:날씨</a></li>
-          <li><a href="http://swell.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:파도</a></li>
-          <li><a href="http://wind.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:바람</a></li>
-          <li><a href="http://tides.willyweather.com.au/nsw/central-coast/norah-head.html" target='_blank'>북쪽:조수</a></li> 
-          <li><a href="http://www.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:날씨</a></li>
-          <li><a href="http://swell.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:파도</a></li>
-          <li><a href="http://wind.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:바람</a></li>
-          <li><a href="http://tides.willyweather.com.au/nsw/illawarra/bass-point.html" target='_blank'>남쪽:조수</a></li> 
+        <ul class="dropdown-menu">       
+<?php
+								  $weather_region=get_weather($param_region);
+								  for ( $x = 0 ; $x < count($weather_region) ; $x++)
+								  {
+								      $weather_region_type = $weather_region[$x];
+								      echo "<li><a href=".$weather_region_type[1]." target='_blank'>".$weather_region_type[0]."</a></li>\n";
+								  }
+?>                  
         </ul>
       </li>
     </ul>

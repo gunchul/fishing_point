@@ -73,7 +73,7 @@ $sydney_points = array
         array(
              array("whale_beach", "Whale Beach", "no_detail"),
              array("1", "-33.607552, 151.335050"),
-        ),
+        ),       
         array(
              array("catherin_hill", "Catherin Hill", "no_detail"),
              array("1", "-33.164425, 151.636498"),
@@ -116,6 +116,12 @@ $sydney_points = array
              array("swansea", "Swansea", "no_detail"),
              array("1", "-33.087752, 151.659984"),
         ),
+        array(
+             array("entrance", "Entrance", "no_detail"),
+             array("P", "-33.339538, 151.498199"),
+             array("1", "-33.339075, 151.499306"),
+             array("2", "-33.337775, 151.500471"),
+        ),
     ),
 
     array(
@@ -134,6 +140,19 @@ $sydney_points = array
              array("kiama", "Kiama", "no_detail"),
              array("1", "-34.671652, 150.865757"),
         ),
+        array(
+             array("gymea_bay", "Gymea Bay", "no_detail"),
+             array("P", "-34.050523, 151.091743"),
+             array("1", "-34.049790, 151.093132"),
+        ),     
+        array(
+             array("warumbul", "Warumbul", "no_detail"),
+             array("P", "-34.076174, 151.103253"),
+        ),     
+        array(
+             array("lilli_pilli", "Lilli Pilli", "no_detail"),
+             array("P", "-34.069791, 151.111291"),
+        ),     
     ),
 );	
 
