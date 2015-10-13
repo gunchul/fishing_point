@@ -32,13 +32,21 @@ $point_first = $points[1];
   <script src="http://maps.googleapis.com/maps/api/js"></script>
 
   <script>
+				var longpress = false;
+				var mouse_down_time;
+				var mouse_up_time;
+				
+    function open_in_new_windows(position) {
+      window.open("http://maps.google.com/maps?q="+position);
+    }
+    
     function initialize() {
       var map_center = new google.maps.LatLng(<?php echo $point_first[$point_pos_idx]; ?>);
       var mapProp = { center:map_center, zoom:<?php echo $zoom_level_default ?>, mapTypeId:google.maps.MapTypeId.HYBRID, disableDefaultUI:true };
       var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
       map.addListener('click', function() {map.setZoom(<?php echo $zoom_level_default ?>);});
-  
+      
       var pos = [];
       var marker = [];
       <?php
@@ -47,8 +55,10 @@ $point_first = $points[1];
           $point = $points[$x+1]; //points[0]: points attribute
           echo "pos[".$x."] = new google.maps.LatLng(".$point[$point_pos_idx].");\n";
           echo "marker[".$x."] = new google.maps.Marker({position:pos[".$x."], label: \"".$point[$point_name_idx]."\"});\n";
-          echo "marker[".$x."].addListener('click', function(){map.setZoom(".$zoom_level_zoom_in."); map.setCenter(marker[".$x."].getPosition()); });";
-          echo "marker[".$x."].setMap(map);\n";         
+          echo "marker[".$x."].addListener('mousedown', function(event){mouse_down_time = new Date().getTime();});";
+          echo "marker[".$x."].addListener('mouseup', function(event){mouse_up_time = new Date().getTime(); longpress = (mouse_up_time - mouse_down_time < 500) ? false : true;});";
+          echo "marker[".$x."].addListener('click', function(){ if ( longpress )	{ open_in_new_windows(\"".$point[$point_pos_idx]."\"); }	else	{	map.setZoom(".$zoom_level_zoom_in."); map.setCenter(marker[".$x."].getPosition()); } } );";
+				      echo "marker[".$x."].setMap(map);\n";
       }
       ?>	  
     }
