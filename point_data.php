@@ -26,6 +26,7 @@ $sydney_points = array
              array("4",   "-33.811868, 151.274131"),
              array("5",   "-33.812037, 151.273857"),
              array("6",   "-33.812307, 151.273881"),
+             array("7",   "-33.811738, 151.271700"),             
              array("P",  "-33.805701, 151.270166"),
         ),
         array(
@@ -35,6 +36,7 @@ $sydney_points = array
         array(
              array("browns_rock", "Browns Rock", "no_detail"),
              array("1", "-33.995006,151.238045"),
+             array("P", "-33.992050, 151.239990"),
         ),
         array(
              array("cape_banks", "Cape Banks", "no_detail"),
@@ -43,6 +45,9 @@ $sydney_points = array
         array(
              array("chowder_bay", "Chowder Bay", "no_detail"),
              array("1", "-33.839917, 151.253719"),
+             array("P1", "-33.839124, 151.251782"),
+             array("P2", "-33.839177, 151.250946"),
+             array("P2", "-33.839164, 151.250680"),
         ),
         array(
              array("laperouse", "Laperouse", "no_detail"),
@@ -61,6 +66,7 @@ $sydney_points = array
         array(
              array("watsons_bay", "Watsons Bay", "no_detail"),
              array("1", "-33.838281,151.278688"),
+             array("P", "-33.839494, 151.280280"),
         ),
         array(
              array("south_curl_curl", "South Curl Curl", "no_detail"),
@@ -73,40 +79,54 @@ $sydney_points = array
         array(
              array("whale_beach", "Whale Beach", "no_detail"),
              array("1", "-33.607552, 151.335050"),
+             array("P", "-33.606874, 151.331666"),
         ),       
         array(
              array("catherin_hill", "Catherin Hill", "no_detail"),
              array("1", "-33.164425, 151.636498"),
+             array("P1", "-33.161997, 151.628963"),
+             array("P2", "-33.160376, 151.627195"),
+             
         ),
         array(
              array("kill_care", "Kill Care", "no_detail"),
              array("1", "-33.531278,151.374033"),
+             array("P", "-33.528387, 151.373808"),
         ),
         array(
              array("norah_head", "Norah Head", "no_detail"),
              array("1", "-33.284143, 151.575399"),
              array("2", "-33.282483, 151.578179"),
              array("3", "-33.280450, 151.577679"),
+             array("P", "-33.282277, 151.573887"),
         ),
         array(
              array("scar", "스카", "no_detail"),
              array("1", "-33.191655, 151.623770"),
+             array("2", "-33.193309, 151.623924"),
+             array("3", "-33.194270, 151.623518"),
+             array("4", "-33.194654, 151.622845"),
+             array("P", "-33.187790, 151.621471"),
         ),
         array(
              array("snapper", "Snapper", "no_detail"),
              array("1", "-33.187712,151.627978"),
+             array("P", "-33.186112, 151.627974"),
         ),
         array(
-             array("snapper_side", "Snapper 옆", "no_detail"),
+             array("snapper_side", "오야봉", "no_detail"),
              array("1", "-33.181748, 151.628970"),
+             array("P", "-33.183166, 151.627101"),
         ),
         array(
              array("winney_bay", "Winney Bay", "no_detail"),
              array("1", "-33.482590,151.443454"),
+             array("P", "-33.477249, 151.437232"),
         ),
         array(
              array("wybung", "Wybung", "no_detail"),
              array("1", "-33.197436, 151.623493"),
+             array("P", "-33.196184, 151.621171"),
         ),
         array(
              array("newcastle", "Newcastle", "no_detail"),
