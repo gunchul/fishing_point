@@ -8,6 +8,7 @@ if ( count($param_fishing_point) == 0 )
     $param_fishing_point="balgowla_height";
 }
 
+include 'point_env.php';
 include 'point_data.php';
 include 'point_weather.php';
 
@@ -18,6 +19,9 @@ $zoom_level_zoom_in = 20;
 $points = get_points($param_fishing_point, $points_attr_id_idx, $sydney_points);
 $points_attr = $points[0];
 $point_first = $points[1];
+
+$img_path = $img_dir."/".$points_attr[$points_attr_id_idx];
+$show_img_button=is_dir($img_path)?1:0;
 ?>
 
 <!DOCTYPE html>
@@ -69,15 +73,17 @@ $point_first = $points[1];
  <body>
    <div class="container">
     <h3>
+      <!-- 포인트 이름, 이미지 버튼 -->
       <?php echo $points_attr[$points_attr_name_idx]; ?> 
       <?php 
-				    if ( $points_attr[$points_attr_detail_idx] == "detail" )
-				    {
-				        ;//echo "<a href='point_detail?point=".$points_attr[$points_attr_id_idx]."' class='btn btn-info' role='button' target='_blank'> 포인트 소개 </a>";
-				    }
-      ?>
+  						if ( $show_img_button != 0 )
+		  				{
+										  echo "<a href='point_picture.php?point=".$points_attr[$points_attr_id_idx]."' class='btn btn-primary' role='button' target='_blank'>사진보기</a>"; 
+						  }
+				  ?>              
 				</h3>
     
+    <!-- 네비게이션 -->
     <ul class="nav nav-tabs">
 <?php
 for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
@@ -101,6 +107,7 @@ for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
     {
         $points = $regions[$y];
         $points_attr = $points[0];
+
         echo "<li><a href='".$this_file."?point=".$points_attr[$points_attr_id_idx]."&region=".$regions_attr[$regions_attr_id_idx]."'>".$points_attr[$points_attr_name_idx]."</a></li>\n";
         for ( $z = 1; $z < count($points) ; $z++ )
         {
@@ -126,6 +133,7 @@ for ( $x = 0 ; $x < count($sydney_points) ; $x++ )
       </li>
     </ul>
   </div>
+  <!-- 지도 -->
   <div id="googleMap" style="position: absolute; width:100%; height:90%;"></div>
 </body>
 </html>
