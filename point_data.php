@@ -118,11 +118,13 @@ $sydney_points = array
              array("1", "-33.181748, 151.628970"),
              array("P", "-33.183166, 151.627101"),
         ),
+/* 
         array(
              array("winney_bay", "Winney Bay", "no_detail"),
              array("1", "-33.482590,151.443454"),
              array("P", "-33.477249, 151.437232"),
         ),
+*/
         array(
              array("wybung", "Wybung", "no_detail"),
              array("1", "-33.197436, 151.623493"),

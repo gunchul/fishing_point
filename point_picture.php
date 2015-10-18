@@ -33,12 +33,12 @@ $img_path = $img_dir."/".$points_attr[$points_attr_id_idx];
 
 $d = dir($img_path);
 
-while (($file = $d->read()) !== false){ 
+while (($file = $d->read()) !== false)
+{ 
   if ( strlen($file) > 4 )
   {
-    echo "<img src='".$img_path."/".$file."' class='img-rounded' width='320' height='240'><BR><BR>";
+    echo "<img src='".$img_path."/".$file."' class='img-rounded' width='320'><BR><BR>\n";
   }
-  
 } 
 $d->close(); 
 
