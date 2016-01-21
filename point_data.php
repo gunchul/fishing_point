@@ -69,6 +69,11 @@ $sydney_points = array
              array("P", "-33.839494, 151.280280"),
         ),
         array(
+             array("parsley_bay", "Parsley Bay", "no_detail"),
+             array("1", "-33.849229, 151.277097"),
+             array("P", "-33.849807, 151.277892"),
+        ),
+        array(
              array("south_curl_curl", "South Curl Curl", "no_detail"),
              array("1", "-33.776321, 151.293818"),
         ),
@@ -118,13 +123,13 @@ $sydney_points = array
              array("1", "-33.181748, 151.628970"),
              array("P", "-33.183166, 151.627101"),
         ),
-/* 
+
         array(
              array("winney_bay", "Winney Bay", "no_detail"),
              array("1", "-33.482590,151.443454"),
              array("P", "-33.477249, 151.437232"),
         ),
-*/
+
         array(
              array("wybung", "Wybung", "no_detail"),
              array("1", "-33.197436, 151.623493"),
@@ -144,6 +149,17 @@ $sydney_points = array
              array("1", "-33.339075, 151.499306"),
              array("2", "-33.337775, 151.500471"),
         ),
+        array(
+             array("nude_beach", "누드비치", "no_detail"),
+             array("P", "-33.204143, 151.606193"),
+             array("1", "-33.202296,151.616472"),
+        ),
+        array(
+             array("catherine_hill_1", "귀신골", "no_detail"),
+             array("P", "-33.147757,151.632137"),
+             array("1", "-33.143244,151.640544"),
+        ),
+        
     ),
 
     array(
